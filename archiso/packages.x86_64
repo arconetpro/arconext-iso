@@ -585,14 +585,15 @@ linux-zen-headers
 ####                               CALAMARES
 ###########################################################################
 
-arco-calamares
-arconet-calamares-config
-arcolinux-system-installation-git
-#arcolinux-system-installation-dev-git
-arcolinux-welcome-app-git
+arco-calamares-next
+arconet-calamares-config-next
+#arcolinux-system-installation-git
+arcolinux-system-installation-dev-git
+#arcolinux-welcome-app-git
 #arcolinuxd-welcome-app-git
-#arcolinux-welcome-app-dev-git
+arcolinux-welcome-app-dev-git
 #arcolinux-welcome-app-deepin-git
+hwinfo
 
 adobe-source-han-sans-jp-fonts
 adobe-source-han-sans-kr-fonts
@@ -650,8 +651,8 @@ arcolinux-config-all-desktops-git
 arcolinux-dconf-all-desktops-git
 arcolinux-fish-git
 arcolinux-meta-log
-arcolinux-system-config-git
-#arcolinux-system-config-dev-git
+#arcolinux-system-config-git
+arcolinux-system-config-dev-git
 #arcolinuxd-system-config-git
 #arcolinuxd-system-config-dev-git - OUT!
 arcolinux-wallpapers-git

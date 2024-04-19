@@ -31,12 +31,12 @@ echo
 
 	arcolinuxVersion='v24.05.11'
 
-	isoLabel='arconet-'$arcolinuxVersion'-x86_64.iso'
+	isoLabel='arconext-'$arcolinuxVersion'-x86_64.iso'
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 76-1"
-	buildFolder=$HOME"/arconet-build"
-	outFolder=$HOME"/arconet-Out"
+	buildFolder=$HOME"/arconext-build"
+	outFolder=$HOME"/arconext-Out"
 	archisoVersion=$(sudo pacman -Q archiso)
 
 	# If you want to add packages from the chaotics-aur repo then
@@ -245,18 +245,18 @@ echo
 	#Setting variables
 
 	#profiledef.sh
-	oldname1='iso_name="arconet'
-	newname1='iso_name="arconet'
+	oldname1='iso_name="arconext'
+	newname1='iso_name="arconext'
 
-	oldname2='iso_label="arconet'
-	newname2='iso_label="arconet'
+	oldname2='iso_label="arconext'
+	newname2='iso_label="arconext'
 
-	oldname3='arconet'
-	newname3='arconet'
+	oldname3='arconext'
+	newname3='arconext'
 
 	#hostname
-	oldname4='arconet'
-	newname4='arconet'
+	oldname4='arconext'
+	newname4='arconext'
 
 	#sddm.conf user-session
 	oldname5='Session=xfce'
