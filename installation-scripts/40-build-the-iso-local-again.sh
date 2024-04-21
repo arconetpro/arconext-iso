@@ -251,12 +251,12 @@ echo
 	oldname2='iso_label="arconext'
 	newname2='iso_label="arconext'
 
-	oldname3='arconext'
-	newname3='arconext'
+	oldname3='arconet'
+	newname3='arconet'
 
 	#hostname
-	oldname4='arconext'
-	newname4='arconext'
+	oldname4='arconet'
+	newname4='arconet'
 
 	#sddm.conf user-session
 	oldname5='Session=xfce'
