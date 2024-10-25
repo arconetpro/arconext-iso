@@ -2,10 +2,10 @@
 # shellcheck disable=SC2034
 
 iso_name="arconext"
-iso_label="arconext-vv24.12.01"
+iso_label="arconext-v24.12.01"
 iso_publisher="ArcoLinux <http://www.arcolinux.info>"
 iso_application="ArcoLinux Live/Rescue CD"
-iso_version="vv24.12.01"
+iso_version="v24.12.01"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
