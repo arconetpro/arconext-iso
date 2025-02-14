@@ -134,16 +134,15 @@ echo
 	#First letter of desktop is small letter
 
 	desktop="xfce"
-	dmDesktop="xfce"
 
 	arcolinuxVersion='v25.03.02'
 
-	isoLabel='arconet-'$arcolinuxVersion'-x86_64.iso'
+	isoLabel='arconext-'$arcolinuxVersion'-x86_64.iso'
 
 	# setting of the general parameters
 	archisoRequiredVersion="archiso 82-1"
-	buildFolder=$HOME"/arconet-build"
-	outFolder=$HOME"/arconet-Out"
+	buildFolder=$HOME"/arconext-build"
+	outFolder=$HOME"/arconext-Out"
 
 	# If you want to add packages from the chaotics-aur repo then
 	# change the variable to true and add the package names
@@ -152,7 +151,16 @@ echo
 	chaoticsrepo=false
 
 	if [[ "$chaoticsrepo" == "true" ]]; then
-		bash "$installed_dir/get-the-keys-and-mirrors-chaotic-aur.sh"
+	    if pacman -Q chaotic-keyring &>/dev/null && pacman -Q chaotic-mirrorlist &>/dev/null; then
+	        echo "Chaotic keyring and mirrorlist present"
+	    else
+	        if [[ -f "$installed_dir/get-the-keys-and-mirrors-chaotic-aur.sh" ]]; then
+	            bash "$installed_dir/get-the-keys-and-mirrors-chaotic-aur.sh"
+	        else
+	            echo "Error: Installation script not found at $installed_dir"
+	            exit 1
+	        fi
+	    fi
 	fi
 	
 	# If you are ready to use your personal repo and personal packages
@@ -366,40 +374,11 @@ echo
 echo "################################################################## "
 tput setaf 2
 echo "Phase 5 : "
-echo "- Changing all references"
 echo "- Adding time to /etc/dev-rel"
 echo "- Clean cache"
 tput sgr0
 echo "################################################################## "
 echo
-
-	#Setting variables
-
-	#profiledef.sh
-	oldname1='iso_name="arconext'
-	newname1='iso_name="arconext'
-
-	oldname2='iso_label="arconext'
-	newname2='iso_label="arconext'
-
-	oldname3='arconet'
-	newname3='arconet'
-
-	#hostname
-	oldname4='arconet'
-	newname4='arconet'
-
-	#sddm.conf user-session
-	oldname5='Session=xfce'
-	newname5='Session='$dmDesktop
-
-	echo "Changing all references"
-	echo
-	sed -i 's/'$oldname1'/'$newname1'/g' $buildFolder/archiso/profiledef.sh
-	sed -i 's/'$oldname2'/'$newname2'/g' $buildFolder/archiso/profiledef.sh
-	sed -i 's/'$oldname3'/'$newname3'/g' $buildFolder/archiso/airootfs/etc/dev-rel
-	sed -i 's/'$oldname4'/'$newname4'/g' $buildFolder/archiso/airootfs/etc/hostname
-	sed -i 's/'$oldname5'/'$newname5'/g' $buildFolder/archiso/airootfs/etc/sddm.conf.d/kde_settings.conf
 
 	echo "Adding time to /etc/dev-rel"
 	date_build=$(date -d now)
